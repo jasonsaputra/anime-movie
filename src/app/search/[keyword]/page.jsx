@@ -4,7 +4,9 @@ import { notFound } from "next/navigation";
 
 const Page = async ({ params }) => {
   const { keyword } = await params
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${keyword}`);
+  const decodedKeyword = decodeURI(keyword)
+
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${decodedKeyword}`);
   const searchAnime = await response.json();
 
   if (searchAnime.data.length === 0) {
@@ -14,7 +16,7 @@ const Page = async ({ params }) => {
   return (
     <>
       <section>
-        <Header title={`Pencarian Untuk ${keyword}`} />
+        <Header title={`Pencarian Untuk ${decodedKeyword}`} />
         <AnimeList api={searchAnime}/>
       </section>
     </>
