@@ -1,6 +1,6 @@
-import AnimeList from "@/components/AnimeList";
-import Header from "@/components/AnimeList/Header";
-import { getAnimeResponse, getNestedAnimeResponse, reproduce } from "@/services/api-services";
+import AnimeList from "../components/AnimeList";
+import Header from "../components/AnimeList/Header";
+import { getAnimeResponse, getNestedAnimeResponse, reproduce } from "../services/api-services";
 
 const Page = async () => {
   // const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=8`);
