@@ -8,7 +8,7 @@ const Page = async () => {
   return (
     <div className="mt-8 text-color-primary flex flex-col justify-center items-center">
       <h5 className="text-2xl font-bold">Welcome, {user?.name}</h5>
-      <Image src={user?.image} alt="user-image" width={250} height={250} />
+      <Image src={user?.image} alt="user-image" width={250} height={250} priority />
       <div className="flex flex-wrap gap-4 py-8">
         <Link
           href="/users/dashboard/collection"
