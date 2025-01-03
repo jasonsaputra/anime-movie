@@ -16,16 +16,15 @@ const InputSearch = () => {
         
         if (event.key === "Enter" || event.type === "click") {
             event.preventDefault()
-            
             router.push(`/search/${keyword}`)
         }
     };
 
     return (
-        <div className="relative">
+        <div className="flex justify-center relative ">
             <input
                 placeholder="Search anime..."
-                className="w-full p-2 rounded"
+                className="flex p-2 w-full text-sm min-w-[50px] rounded"
                 ref={searchRef}
                 onKeyDown={handleSearch}
             />

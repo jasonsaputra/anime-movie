@@ -18,6 +18,7 @@ module.exports = {
         secondary: '#393E46',
         accent: '#FFC639',
         dark: '#222831',
+        black: '#181818',
       }
     }
   },
