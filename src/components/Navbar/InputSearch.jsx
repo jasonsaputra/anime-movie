@@ -21,15 +21,15 @@ const InputSearch = () => {
     };
 
     return (
-        <div className="flex justify-center relative ">
+        <div className="flex justify-center relative md:w-full w-auto">
             <input
                 placeholder="Search anime..."
-                className="flex p-2 w-full text-sm min-w-[50px] rounded"
+                className="flex p-2 w-full text-sm rounded"
                 ref={searchRef}
                 onKeyDown={handleSearch}
             />
-            <button className="absolute top-2 end-2" onClick={handleSearch}>
-                <MagnifyingGlass size={24} />
+            <button className="absolute top-1.5 end-2" onClick={handleSearch}>
+                <MagnifyingGlass size={24} className="w-5" />
             </button>
         </div>
     )

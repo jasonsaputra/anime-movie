@@ -7,7 +7,7 @@ const UserActionButton = async () => {
     const actionURL = user ? "/api/auth/signout" : "/api/auth/signin"
 
     return (
-      <div className="flex justify-between items-center gap-4 relative">
+      <div className="md:flex hidden justify-between items-center gap-4 relative">
         {
           user ? <Link href="/users/dashboard" className="text-color-primary py-1">Dashboard</Link> : null
         }
