@@ -4,6 +4,8 @@ import Image from "next/image";
 import CollectionButton from "@/components/AnimeList/CollectionButton"
 import { authUserSession } from "@/services/auth-services";
 import prisma from "@/services/prisma";
+import CommentInput from "@/components/AnimeList/CommentInput";
+import CommentBox from "@/components/AnimeList/CommentBox";
 
 const Page = async ({ params: { id } }) => {
   const anime = await getAnimeResponse(`anime/${id}`);
@@ -50,6 +52,15 @@ const Page = async ({ params: { id } }) => {
           priority 
         />
         <p className="text-justify test-xl">{anime.data.synopsis}</p>
+      </div>
+      <div className="p-4">
+        <h3 className="text-color-primary text-2xl gap-4 mb-2">Komentar Penonton</h3>
+        <CommentBox anime_mal_id={id} />
+
+        {
+          user && <CommentInput anime_mal_id={id} user_email={user?.email} username={user?.name} anime_title={anime.data.title} />
+        }
+        
       </div>
       <div>
         <VideoPlayer youtubeId={anime.data.trailer.youtube_id} />
