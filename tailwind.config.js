@@ -19,6 +19,8 @@ module.exports = {
         accent: '#FFC639',
         dark: '#222831',
         black: '#181818',
+        error: '#ff3333',
+        success: `#25FA5C`,
       }
     }
   },

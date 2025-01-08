@@ -7,6 +7,7 @@ const CommentInput = ({ anime_mal_id, user_email, username, anime_title }) => {
 
     const [comment, setComment] = useState();
     const [isCreated, setIsCreated] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     const router = useRouter();
 
@@ -17,26 +18,43 @@ const CommentInput = ({ anime_mal_id, user_email, username, anime_title }) => {
     const handlePosting = async (event) => {
         event.preventDefault();
 
-        const data = { anime_mal_id, user_email, comment, username, anime_title };
-        
-        const response = await fetch("/api/v1/comment", {
-        method: "POST",
-        body: JSON.stringify(data),
-        });
-
-        const postComment = await response.json();
-        if (postComment.isCreated) {
-            setIsCreated(true);
-            setComment("")
-            router.refresh()
+        // Validasi minimal 3 karakter
+        if (comment.length < 3) {
+            setErrorMessage("Komentar harus memiliki minimal 3 karakter.");
+            return;
         }
-        return
+
+        const data = { anime_mal_id, user_email, comment, username, anime_title };
+
+        try {
+            const response = await fetch("/api/v1/comment", {
+                method: "POST",
+                body: JSON.stringify(data),
+            });
+
+            const postComment = await response.json();
+            if (postComment.isCreated) {
+                setIsCreated(true);
+                setComment("");
+                setErrorMessage("");
+                router.refresh();
+
+                setTimeout(() => {
+                    setIsCreated(false);
+                }, 3000);
+            }
+        } catch (error) {
+            setErrorMessage("Gagal memposting komentar. Silakan coba lagi.");
+        }
     }
 
     return (
         <div className="flex flex-col gap-2">
             {
                 isCreated && <p className="text-color-primary">Postingan terkirim...</p>
+            }
+            {
+                errorMessage && <p className="text-color-error">{errorMessage}</p>
             }
             <textarea
                 onChange={handleInput}
