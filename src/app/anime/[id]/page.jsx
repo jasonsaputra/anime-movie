@@ -21,7 +21,7 @@ const Page = async ({ params: { id } }) => {
           {anime.data.title} - {anime.data.year}
         </h3>
         {
-          !collection && user && <CollectionButton anime_mal_id={id} user_email={user?.email} anime_image={anime.data.images.webp.image_url} anime_title={anime.data.title} />
+          !collection && user && <CollectionButton anime_mal_id={id} user_email={user?.email} anime_image={anime.data.images.webp.large_image_url} anime_title={anime.data.title} />
         }
       </div>
       <div className="pt-4 px-4 flex gap-2 text-color-primary overflow-x-auto">
@@ -44,8 +44,8 @@ const Page = async ({ params: { id } }) => {
       </div>
       <div className="pt-4 px-4 flex sm:flex-nowrap flex-wrap gap-2 text-color-primary">
         <Image
-          src={anime.data.images.webp.image_url}
-          alt={anime.data.images.jpg.image_url}
+          src={anime.data.images.webp.large_image_url}
+          alt={anime.data.images.jpg.large_image_url}
           width={250}
           height={250}
           className="w-full rounded object-cover"
