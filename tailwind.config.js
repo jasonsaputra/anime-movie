@@ -21,6 +21,7 @@ module.exports = {
         black: '#181818',
         error: '#ff3333',
         success: `#25FA5C`,
+        disabled: '#999999',
       }
     }
   },

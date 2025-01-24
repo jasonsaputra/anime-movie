@@ -44,11 +44,11 @@ const Page = async ({ params: { id } }) => {
       </div>
       <div className="pt-4 px-4 flex sm:flex-nowrap flex-wrap gap-2 text-color-primary">
         <Image
-          src={anime.data.images.webp.large_image_url}
-          alt={anime.data.images.jpg.large_image_url}
+          src={anime.data.images.jpg.large_image_url}
+          alt="..."
           width={250}
           height={250}
-          className="w-full rounded object-cover"
+          className="object-cover rounded-lg aspect-[3/4]"
           priority 
         />
         <p className="text-justify test-xl">{anime.data.synopsis}</p>
