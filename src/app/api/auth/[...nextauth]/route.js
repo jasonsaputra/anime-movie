@@ -8,8 +8,14 @@ export const authOption = {
             clientSecret: process.env.GITHUB_SECRET
         })
     ],
-    secret:process.env.NEXTAUTH_SECRET
-}
+    secret:process.env.NEXTAUTH_SECRET,
+    session: {
+        strategy: "jwt", // Gunakan JWT
+      },
+      jwt: {
+        encryption: true, // Aktifkan enkripsi
+      },
+}   
 
 const handler = NextAuth(authOption)
 

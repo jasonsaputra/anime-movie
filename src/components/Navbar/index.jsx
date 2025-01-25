@@ -13,7 +13,7 @@ const Navbar = () => {
 
                     {/* Logo and Input Search */}
                     <Link href="/" className="flex items-center gap-4">
-                        <Image src={AnimeVerse} alt="..." className="md:w-12 sm:w-12 w-10" />
+                        <Image src={AnimeVerse} alt="..." className="w-10" />
                         <h1 className="font-bold text-xl text-color-primary">AnimeVerse</h1>
                     </Link>
                     
@@ -27,7 +27,8 @@ const Navbar = () => {
                         <Link href="/" className="items-center text-color-primary md:inline-flex sm:hidden hidden">Home</Link>
                         <Link href="/populer" className="items-center text-color-primary md:inline-flex sm:hidden hidden">Populer</Link>
                         <Link href="/news" className="items-center text-color-primary md:inline-flex sm:hidden hidden">News</Link>
-                        <Link href="/news" className="items-center text-color-primary md:inline-flex sm:hidden hidden">News</Link>
+                        <Link href="/upcoming" className="items-center text-color-primary md:inline-flex sm:hidden hidden">Upcoming</Link>
+                        {/* https://api.jikan.moe/v4/seasons/upcoming */}
                     </div>
                 </div>
                 {/* User Action */}

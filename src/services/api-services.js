@@ -21,6 +21,5 @@ export const reproduce = (data, gap) => {
     const response = {
         data: data.slice(first, last)
     }
-    
     return response
 }

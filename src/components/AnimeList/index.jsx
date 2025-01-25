@@ -18,10 +18,12 @@ const AnimeList = ({ api }) => {
               priority
             />
             <div className="flex justify-between items-center p-2 md:text-xs text-xs text-color-disabled">
-              <p className="flex gap-1">
-                <Image src={star} alt="..." className="md:w-3 sm:w-3 w-3 no-hover" />
-                {anime.score}
-              </p>
+              {anime.score && (
+                <p className="flex gap-1">
+                  <Image src={star} alt="..." className="md:w-3 sm:w-3 w-3 no-hover" />
+                  {anime.score}
+                </p>
+              )}
               <p>{anime.type}</p>
             </div>
             <h3 className="font-bold md:text-md text-md px-2">{anime.title}</h3>

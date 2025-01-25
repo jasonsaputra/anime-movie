@@ -4,12 +4,12 @@ import AnimeList from "../components/AnimeList";
 import { getAnimeResponse, getNestedAnimeResponse, reproduce } from "../services/api-services";
 
 const Page = async () => {
-  // const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=8`);
-  // const topAnime = await response.json();
-
+  
   const topAnime = await getAnimeResponse("top/anime", "limit=12");
   let recommendedAnime = await getNestedAnimeResponse("recommendations/anime", "entry")
   recommendedAnime = reproduce(recommendedAnime, 4)
+  const randomAnimeResponse = await getAnimeResponse("random/anime", "");
+  const randomAnime = { data: [randomAnimeResponse.data] };
 
   return (
     <>
@@ -21,6 +21,10 @@ const Page = async () => {
       <section>
         <Header title="Rekomendasi" />
         <AnimeList api={recommendedAnime} />
+      </section>
+      <section>
+        <Header title="Random" />
+        <AnimeList api={randomAnime} />
       </section>
     </>
   );
