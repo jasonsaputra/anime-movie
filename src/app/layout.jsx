@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,7 +32,8 @@ export default function RootLayout({ children }) {
         className={`${manrope.variable} bg-color-black antialiased`}
       >
         <Navbar />
-        {children}
+          {children}
+        <Footer />
       </body>
     </html>
   );

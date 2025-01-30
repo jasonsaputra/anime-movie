@@ -45,6 +45,9 @@ const Page = async () => {
           </section>
         </div>
 
+        {/* Garis Pemisah */}
+        <div className="hidden lg:block w-[1px] bg-[#393E46] opacity-75" />
+
         {/* Right Sidebar */}
         <aside className="w-full lg:max-w-[350px] flex-shrink-0">
           <section>
