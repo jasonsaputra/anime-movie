@@ -17,10 +17,10 @@ const SidebarAnimeList = ({ api }) => {
               height={100}
               className="object-cover rounded-lg aspect-[3/4]"
             />
-            <section className="flex flex-col px-2 w-full">
-                <div className="flex justify-between items-center p-2 md:text-xs text-xs text-color-disabled">
+            <section className="flex flex-col px-2 w-full gap-1">
+                <p className="flex justify-between items-center pl-2 md:text-xs text-xs text-color-disabled">
                     {airedYear}
-                </div>
+                </p>
                 <p className="font-medium text-md px-2 line-clamp-1">{anime.title}</p>
             </section>
           </Link>
