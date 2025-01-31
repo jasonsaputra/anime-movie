@@ -4,8 +4,6 @@ import React from 'react';
 import Image from "next/image";
 
 const Banner = ({ data }) => {
-  console.log("Anime Data in Banner:", data);
-
   return (
     <div className="banner-container" style={{ position: 'relative', height: '500px', backgroundColor: '#000' }}>
       <img
