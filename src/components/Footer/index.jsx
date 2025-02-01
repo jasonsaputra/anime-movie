@@ -5,7 +5,7 @@ import Link from "next/link"
 const Footer = () => {
     return(
         <>
-            <div className="w-full h-auto flex mx-auto mt-16 justify-evenly items-center box-border p-6 border-t border-color-secondary/50 gap-12">
+            <div className="w-full h-auto flex lg:flex-row md:flex-row flex-col mx-auto mt-16 justify-between items-center box-border px-20 py-6 border-t border-color-secondary/50 gap-12">
                 <div className="flex flex-col items-start justify-center">
                     <Link href="/" className="flex items-center gap-4">
                         <Image src={AnimeVerse} alt="..." className="w-10" />
@@ -17,32 +17,39 @@ const Footer = () => {
                     </p>
                 </div>
                 
-                <div className="flex justify-between flex-row text-sm text-color-primary gap-8">
+                <div className="flex justify-between text-sm text-color-primary gap-8">
                     <div className="flex flex-col">
-                        <p className="mb-5 text-lg">AnimeVerse</p>
-                        <a href="/about-us" className="mb-4">About us</a>
-                        <a href="/register-partnership" className="mb-4">Daftar Mitra</a>
-                        <a href="/career">Karier</a>
+                        <p className="mb-5 lg:text-md md:text-md text-sm font-medium">AnimeVerse</p>
+                        <Link href="/about-us" className="mb-4">About us</Link>
+                        <Link href="/register-partnership" className="mb-4">Daftar Mitra</Link>
+                        <Link href="/career">Karier</Link>
                     </div>
             
                     <div className="flex flex-col text-sm text-color-primary">
-                        <p className="mb-5 text-lg">Layanan</p>
-                        <a href="/car-rental"  className="mb-4">Sewa Mobil</a>
-                        <a href="/motor-rental">Sewa Motor</a>
+                        <p className="mb-5 lg:text-md md:text-md text-sm font-medium">Layanan</p>
+                        <Link href="/car-rental"  className="mb-4">Sewa Mobil</Link>
+                        <Link href="/motor-rental">Sewa Motor</Link>
                     </div>
             
                     <div className=" flex flex-col text-sm text-color-primary">
-                        <p  className="mb-5 text-lg">Pusat Bantuan</p>
-                        <a href="/syarat-dan-ketentuan" className="mb-4">Syarat dan Ketentuan</a>
-                        <a href="/faq" className="mb-4">FAQ</a>
-                        <a href="https://api.whatsapp.com/send?phone=6285959619412&text=Halo%20Admin%20AnimeVerse">Hubungi Kami</a>
+                        <p  className="mb-5 lg:text-md md:text-md text-sm font-medium">Pusat Bantuan</p>
+                        <Link href="/syarat-dan-ketentuan" className="mb-4">Syarat dan Ketentuan</Link>
+                        <Link href="/faq" className="mb-4">FAQ</Link>
+                        <Link href="https://api.whatsapp.com/send?phone=6285959619412&text=Halo%20Admin%20AnimeVerse">Hubungi Kami</Link>
                     </div>
                 </div>
             </div>
 
             {/* Social Media */}
-            <div>
-                bottom
+            <div className="w-full h-auto flex lg:flex-row md:flex-row flex-col mx-auto justify-between items-center box-border px-20 py-4 text-sm">
+                <div className="flex justify-center items-center lg:flex-row md:flex-row flex-col text-color-disabled gap-6">
+                    <p>Copyright @ 2025</p>
+                    <p>Privacy & Legal</p>
+                    <p>Ad Choices</p>
+                    <p>Accessibility</p>
+                    <p>Manage Cookies</p>
+                </div>
+                <div className="flex flex-col text-color-primary">social media</div>
             </div>
         </>
         
