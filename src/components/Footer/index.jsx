@@ -1,8 +1,23 @@
+"use client"
+
 import Image from "next/image"
 import AnimeVerse from "../../../public/anime-verse.svg"
 import Link from "next/link"
+import { FaInstagram, FaTwitter, FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
+import { useState } from "react";
 
 const Footer = () => {
+
+    const [hoveredIcon, setHoveredIcon] = useState(null);
+
+    const socialMedia = [
+        { href: "https://instagram.com", icon: FaInstagram, name: "Instagram" },
+        { href: "https://twitter.com", icon: FaTwitter, name: "Twitter" },
+        { href: "https://facebook.com", icon: FaFacebook, name: "Facebook" },
+        { href: "https://tiktok.com", icon: FaTiktok, name: "Tiktok" },
+        { href: "https://youtube.com", icon: FaYoutube, name: "YouTube" }
+    ];
+
     return(
         <>
             <div className="w-full h-auto flex lg:flex-row md:flex-row flex-col mx-auto mt-16 justify-between items-center box-border px-20 py-6 border-t border-color-secondary/50 gap-12">
@@ -32,10 +47,10 @@ const Footer = () => {
                     </div>
             
                     <div className=" flex flex-col text-sm text-color-primary">
-                        <p  className="mb-5 lg:text-md md:text-md text-sm font-medium">Pusat Bantuan</p>
-                        <Link href="/syarat-dan-ketentuan" className="mb-4">Syarat dan Ketentuan</Link>
+                        <p  className="mb-5 lg:text-md md:text-md text-sm font-medium">Legal</p>
+                        <Link href="/syarat-dan-ketentuan" className="mb-4">Terms of Services</Link>
                         <Link href="/faq" className="mb-4">FAQ</Link>
-                        <Link href="https://api.whatsapp.com/send?phone=6285959619412&text=Halo%20Admin%20AnimeVerse">Hubungi Kami</Link>
+                        <Link href="https://api.whatsapp.com/send?phone=6285959619412&text=Halo%20Admin%20AnimeVerse">Privacy Policy</Link>
                     </div>
                 </div>
             </div>
@@ -49,7 +64,16 @@ const Footer = () => {
                     <p>Accessibility</p>
                     <p>Manage Cookies</p>
                 </div>
-                <div className="flex flex-col text-color-primary">social media</div>
+                <div className="flex flex-row gap-4">
+                    {socialMedia.map(({ href, icon: Icon, name }, index) => (
+                        <Link href={href} key={index} className="flex items-center justify-center w-12 h-12 rounded-full transition-all"
+                            style={{ backgroundColor: hoveredIcon === name ? "white" : "var(--secondary)", color: hoveredIcon === name ? "black" : "var(--primary)" }}
+                            onMouseEnter={() => setHoveredIcon(name)}
+                            onMouseLeave={() => setHoveredIcon(null)}>
+                            <Icon size={20} style={{ color: hoveredIcon === name ? "black" : "white" }}/>
+                        </Link>
+                    ))}
+                </div>
             </div>
         </>
         
