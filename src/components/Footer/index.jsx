@@ -3,7 +3,7 @@
 import Image from "next/image"
 import AnimeVerse from "../../../public/anime-verse.svg"
 import Link from "next/link"
-import { FaInstagram, FaTwitter, FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
 import { useState } from "react";
 
 const Footer = () => {
@@ -12,7 +12,6 @@ const Footer = () => {
 
     const socialMedia = [
         { href: "https://instagram.com", icon: FaInstagram, name: "Instagram" },
-        { href: "https://twitter.com", icon: FaTwitter, name: "Twitter" },
         { href: "https://facebook.com", icon: FaFacebook, name: "Facebook" },
         { href: "https://tiktok.com", icon: FaTiktok, name: "Tiktok" },
         { href: "https://youtube.com", icon: FaYoutube, name: "YouTube" }
@@ -33,20 +32,20 @@ const Footer = () => {
                 </div>
                 
                 <div className="flex justify-between text-sm text-color-primary gap-8">
-                    <div className="flex flex-col">
+                    <div className="flex flex-col lg:items-start md:items-start sm:items-center">
                         <p className="mb-5 lg:text-md md:text-md text-sm font-medium">AnimeVerse</p>
                         <Link href="/about-us" className="mb-4">About us</Link>
                         <Link href="/register-partnership" className="mb-4">Daftar Mitra</Link>
                         <Link href="/career">Karier</Link>
                     </div>
             
-                    <div className="flex flex-col text-sm text-color-primary">
+                    <div className="flex flex-col lg:items-start md:items-start sm:items-center">
                         <p className="mb-5 lg:text-md md:text-md text-sm font-medium">Layanan</p>
                         <Link href="/car-rental"  className="mb-4">Sewa Mobil</Link>
                         <Link href="/motor-rental">Sewa Motor</Link>
                     </div>
             
-                    <div className=" flex flex-col text-sm text-color-primary">
+                    <div className=" flex flex-col lg:items-start md:items-start sm:items-center">
                         <p  className="mb-5 lg:text-md md:text-md text-sm font-medium">Legal</p>
                         <Link href="/syarat-dan-ketentuan" className="mb-4">Terms of Services</Link>
                         <Link href="/faq" className="mb-4">FAQ</Link>
@@ -56,7 +55,7 @@ const Footer = () => {
             </div>
 
             {/* Social Media */}
-            <div className="w-full h-auto flex lg:flex-row md:flex-row flex-col mx-auto justify-between items-center box-border px-20 py-4 text-sm">
+            <div className="w-full h-auto flex lg:flex-row md:flex-row flex-col mx-auto justify-between items-center box-border px-20 py-4 text-sm gap-6">
                 <div className="flex justify-center items-center lg:flex-row md:flex-row flex-col text-color-disabled gap-6">
                     <p>Copyright @ 2025</p>
                     <p>Privacy & Legal</p>
