@@ -19,36 +19,37 @@ const Footer = () => {
 
     return(
         <>
-            <div className="w-full h-auto flex lg:flex-row md:flex-row flex-col mx-auto mt-16 justify-between items-center box-border px-20 py-6 border-t border-color-secondary/50 gap-12">
-                <div className="flex flex-col items-start justify-center">
+            <div className="w-full h-auto flex lg:flex-row md:flex-row flex-col mx-auto mt-16 justify-between items-center box-border lg:px-20 md:px-20 sm:px-10 px-10 py-6 border-t border-color-secondary/50 gap-12">
+                <div className="flex flex-col items-start justify-center gap-4">
                     <Link href="/" className="flex items-center gap-4">
                         <Image src={AnimeVerse} alt="..." className="w-10" />
                         <h1 className="font-bold text-xl text-color-primary">AnimeVerse</h1>
                     </Link>
-                    <p className="w-full max-w-[465px] mt-4 text-sm text-color-primary text-justify line-clamp-10">
+                    <p className="w-full max-w-[465px] text-sm text-color-primary text-justify line-clamp-10">
                         AnimeVerse adalah platform hiburan anime yang memudahkan pengguna menemukan dan menonton anime populer. Dengan fitur pencarian yang disesuaikan,
                         ulasan pengguna, dan kategori genre, AnimeVerse menawarkan pengalaman menonton yang praktis dan menyenangkan bagi penggemar anime.
                     </p>
                 </div>
                 
                 <div className="flex justify-between text-sm text-color-primary gap-8">
-                    <div className="flex flex-col lg:items-start md:items-start sm:items-center">
-                        <p className="mb-5 lg:text-md md:text-md text-sm font-medium">AnimeVerse</p>
+                    <div className="flex flex-col lg:items-start md:items-start sm:items-center items-center">
+                        <p className="mb-5 lg:text-md md:text-md text-sm font-bold">AnimeVerse</p>
                         <Link href="/about-us" className="mb-4">About us</Link>
-                        <Link href="/register-partnership" className="mb-4">Daftar Mitra</Link>
-                        <Link href="/career">Karier</Link>
+                        <Link href="/register-partnership" className="mb-4">Contact</Link>
+                        <Link href="/career">Careers</Link>
                     </div>
             
-                    <div className="flex flex-col lg:items-start md:items-start sm:items-center">
-                        <p className="mb-5 lg:text-md md:text-md text-sm font-medium">Layanan</p>
-                        <Link href="/car-rental"  className="mb-4">Sewa Mobil</Link>
-                        <Link href="/motor-rental">Sewa Motor</Link>
+                    <div className="flex flex-col lg:items-start md:items-start sm:items-center items-center">
+                        <p className="mb-5 lg:text-md md:text-md text-sm font-bold">Layanan</p>
+                        <Link href="/syarat-dan-ketentuan" className="mb-4">FAQ</Link>
+                        <Link href="/car-rental"  className="mb-4">Help</Link>
+                        <Link href="/motor-rental" className="mb-4">Accessibility</Link>
+                        <Link href="/motor-rental">Feedback</Link>
                     </div>
             
-                    <div className=" flex flex-col lg:items-start md:items-start sm:items-center">
-                        <p  className="mb-5 lg:text-md md:text-md text-sm font-medium">Legal</p>
-                        <Link href="/syarat-dan-ketentuan" className="mb-4">Terms of Services</Link>
-                        <Link href="/faq" className="mb-4">FAQ</Link>
+                    <div className="flex flex-col lg:items-start md:items-start sm:items-center items-center">
+                        <p  className="mb-5 lg:text-md md:text-md text-sm font-bold">Legal</p>
+                        <Link href="/faq" className="mb-4">Terms of Service</Link>
                         <Link href="https://api.whatsapp.com/send?phone=6285959619412&text=Halo%20Admin%20AnimeVerse">Privacy Policy</Link>
                     </div>
                 </div>
